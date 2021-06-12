@@ -2,7 +2,7 @@
 /**
  * Ultimate Universal Web Project Framework
  * @author  hkr GG
- * @version 0.0.25
+ * @version 0.0.26
  * @require PHP >=7.3.0
  * @written PHP ==7.4.0
  * @rev     12.06.2021
@@ -40,22 +40,22 @@ namespace dreamflame\fwx{
 				}
 			};
 		}
-		function e($s){echo($s);}
-		function v($s){var_dump($s);}
-		function vd($s){var_dump($s);die;}
-		function ve($s=null,$r=true){return var_export($s,$r);}
-		function n($m=null){
+		public static function e($s){echo($s);}
+		public static function v($s){var_dump($s);}
+		public static function vd($s){var_dump($s);die;}
+		public static function ve($s=null,$r=true){return var_export($s,$r);}
+		public static function n($m=null){
 			global $fw;
 			if(isset($fw))$fw->err(array('m'=>var_export($m,true)));
 		}
-		function elog($m=null){
+		public static function elog($m=null){
 			global $fw;
 			if(isset($fw))$fw->err(array("m"=>$m,"o"=>"log"));
 		}
 		/* is_fwobj($o) */
-		function is_fwobj(&$o=null){return (isset($o)&&method_exists($o,'__isfwobj'));}
-		function pb($o=0,$l=0){debug_print_backtrace($o,$l);}
-		function backtrace_namespace(){
+		public static function is_fwobj(&$o=null){return (isset($o)&&method_exists($o,'__isfwobj'));}
+		public static function pb($o=0,$l=0){debug_print_backtrace($o,$l);}
+		public static function backtrace_namespace(){
 			$t=array();//trace
 			$fns=array_map(
 				function($v){
