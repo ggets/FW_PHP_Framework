@@ -2,10 +2,10 @@
 /**
  * Ultimate Universal Web Project Framework
  * @author  hkr GG
- * @version 0.0.26
+ * @version 0.0.28
  * @require PHP >=7.3.0
  * @written PHP ==7.4.0
- * @rev     12.06.2021
+ * @rev     29.11.2022
  */
 namespace dreamflame\fwx{
 	class fw{
@@ -37,6 +37,12 @@ namespace dreamflame\fwx{
 				}
 				public function isset($p=null){
 					return (($p===null)?null:property_exists($this,$p));
+				}
+				public function arr():array{
+					$a=(array)$this;
+					array_walk_recursive($a,function(&$i){
+						if(is_object($i))$i=(array)$i;
+					});
 				}
 			};
 		}
