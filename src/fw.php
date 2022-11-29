@@ -2,7 +2,7 @@
 /**
  * Ultimate Universal Web Project Framework
  * @author  hkr GG
- * @version 0.0.31
+ * @version 0.0.32
  * @require PHP >=7.3.0
  * @written PHP ==7.4.0
  * @rev     29.11.2022
@@ -42,7 +42,6 @@ namespace dreamflame\fwx{
 					$a=(array)$this;
 					array_walk_recursive($a,function(&$i){
 						if($this->__isfwobj($i))$i=$i->arr();
-						elseif(is_object($i))$i=(array)$i;
 					});
 					return $a;
 				}
