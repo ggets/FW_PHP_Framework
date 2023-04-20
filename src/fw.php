@@ -2,15 +2,15 @@
 /**
  * Ultimate Universal Web Project Framework
  * @author  hkr GG
- * @version 0.0.32
- * @require PHP >=7.3.0
- * @written PHP ==7.4.0
- * @rev     29.11.2022
+ * @version 0.1.0
+ * @require PHP >=8.0.0
+ * @written PHP ==8.2.5
+ * @rev     20.04.2023
  */
 namespace dreamflame\fwx{
 	class fw{
 		public static function obj($o=null){
-			return new class($o){
+			return new #[\AllowDynamicProperties] class($o){
 				public function __isfwobj(&$o=null){return (isset($o)&&method_exists($o,'__isfwobj'));}
 				public function __call($m,$a){
 					if(isset($this->$m))return call_user_func_array($this->$m,$a);

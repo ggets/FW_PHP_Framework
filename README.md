@@ -5,7 +5,7 @@
 
 ## Requirements:
 
-* PHP >7.3.0
+* PHP >8.0.0
 
 ## Tested:
-* PHP <=8.1.2
+* PHP <=8.2.5
