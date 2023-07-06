@@ -1,7 +1,7 @@
 {
 	"name": "dreamflame/fw",
 	"type": "library",
-	"version": "v0.1.4",
+	"version": "v0.1.5",
 	"description": "PHP Framework object",
 	"keywords": ["PHP","object"],
 	"homepage": "https://dreamflame.in",
