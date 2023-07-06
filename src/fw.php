@@ -2,16 +2,16 @@
 /**
  * Ultimate Universal Web Project Framework
  * @author  hkr GG
- * @version 0.1.0
+ * @version 0.1.3
  * @require PHP >=8.0.0
  * @written PHP ==8.2.5
- * @rev     20.04.2023
+ * @rev     06.07.2023
  */
 namespace dreamflame\fwx{
 	class fw{
 		public static function obj($o=null){
-			return new #[\AllowDynamicProperties] class($o){
-				public function __isfwobj(&$o=null){return (isset($o)&&method_exists($o,'__isfwobj'));}
+			return new #[\AllowDynamicProperties] class($o) extends stdClass{
+				public function __isfwobj(&$o=null){return (isset($o)&&is_object($o)&&($o instanceof stdClass)&&method_exists($o,'__isfwobj'));}
 				public function __call($m,$a){
 					if(isset($this->$m))return call_user_func_array($this->$m,$a);
 					else $this->m=$m;
@@ -60,7 +60,7 @@ namespace dreamflame\fwx{
 			if(isset($fw))$fw->err(array("m"=>$m,"o"=>"log"));
 		}
 		/* is_fwobj($o) */
-		public static function is_fwobj(&$o=null){return (isset($o)&&method_exists($o,'__isfwobj'));}
+		public static function is_fwobj(&$o=null){return (isset($o)&&is_object($o)&&($o instanceof stdClass)&&method_exists($o,'__isfwobj'));}
 		public static function pb($o=0,$l=0){debug_print_backtrace($o,$l);}
 		public static function backtrace_namespace(){
 			$t=array();//trace
