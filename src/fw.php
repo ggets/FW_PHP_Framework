@@ -2,7 +2,7 @@
 /**
  * Ultimate Universal Web Project Framework
  * @author  hkr GG
- * @version 0.1.3
+ * @version 0.1.4
  * @require PHP >=8.0.0
  * @written PHP ==8.2.5
  * @rev     06.07.2023
